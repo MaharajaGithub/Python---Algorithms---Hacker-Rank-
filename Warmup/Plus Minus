@@ -1,0 +1,37 @@
+# TASK :
+
+# Function Description
+# Complete the plusMinus function in the editor below.
+# plusMinus has the following parameter(s):
+
+              int arr[n]: an array of integers
+
+# Print
+# Print the ratios of positive, negative and zero values in the array. 
+# Each value should be printed on a separate line with 6 digits after the decimal. The function should not return a value.
+
+# Input Format
+# The first line contains an integer,n, the size of the array.
+# The second line contains n space-separated integers that describe arr[n].
+
+# SOLN :
+
+import math
+import os
+import random
+import re
+import sys
+
+
+def plusMinus(arr):
+    positive = sum(x > 0 for x in arr) / len(arr)
+    negative = sum(x < 0 for x in arr) / len(arr)
+    zero = sum(x == 0 for x in arr) / len(arr)    
+    print(positive, negative, zero, sep="\n")
+    
+if __name__ == '__main__':
+    n = int(input().strip())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    plusMinus(arr)
