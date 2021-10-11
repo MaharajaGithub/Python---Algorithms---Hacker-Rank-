@@ -1,0 +1,40 @@
+# TASK :
+
+# Function Description
+# Complete the function kangaroo in the editor below.
+
+# kangaroo has the following parameter(s):
+
+              int x1, int v1: starting position and jump distance for kangaroo 1
+              int x2, int v2: starting position and jump distance for kangaroo 2
+
+# Returns
+              string: either YES or NO
+              
+# SOLN :
+
+def kangaroo(x1, v1, x2, v2):
+    if ((x2-x1)*(v2-v1))<0 and ((x2-x1)%(v2-v1)) == 0:
+        result = "YES"
+    else:
+        result = "NO"
+    return result
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    first_multiple_input = input().rstrip().split()
+
+    x1 = int(first_multiple_input[0])
+
+    v1 = int(first_multiple_input[1])
+
+    x2 = int(first_multiple_input[2])
+
+    v2 = int(first_multiple_input[3])
+
+    result = kangaroo(x1, v1, x2, v2)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
