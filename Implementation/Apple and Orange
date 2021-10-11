@@ -1,0 +1,44 @@
+# TASK :
+# Function Description
+# Complete the countApplesAndOranges function in the editor below. It should print the number of apples and oranges that land on Sam's house, each on a separate line.
+
+# countApplesAndOranges has the following parameter(s):
+        s: integer, starting point of Sam's house location.
+        t: integer, ending location of Sam's house location.
+        a: integer, location of the Apple tree.
+        b: integer, location of the Orange tree.
+        apples: integer array, distances at which each apple falls from the tree.
+        oranges: integer array, distances at which each orange falls from the tree.
+    
+# SOLN :
+
+
+def countApplesAndOranges(s, t, a, b, apples, oranges):
+    # Write your code here
+    print(sum([1 for x in apples if (x+a) >= s and (x+a) <=t]))
+    print(sum([1 for y in oranges if (y+b) >= s and (y+b) <=t]))
+    
+if __name__ == '__main__':
+    first_multiple_input = input().rstrip().split()
+
+    s = int(first_multiple_input[0])
+
+    t = int(first_multiple_input[1])
+
+    second_multiple_input = input().rstrip().split()
+
+    a = int(second_multiple_input[0])
+
+    b = int(second_multiple_input[1])
+
+    third_multiple_input = input().rstrip().split()
+
+    m = int(third_multiple_input[0])
+
+    n = int(third_multiple_input[1])
+
+    apples = list(map(int, input().rstrip().split()))
+
+    oranges = list(map(int, input().rstrip().split()))
+
+    countApplesAndOranges(s, t, a, b, apples, oranges)
